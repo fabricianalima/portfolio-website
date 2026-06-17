@@ -82,7 +82,7 @@ main {
 .section-container {
     max-width: 70rem;
     margin: 0 auto;
-    padding: var(--sapacing-xl) var (--spacing-md);
+    padding: var(--spacing-xl) var (--spacing-md);
     scroll-margin-top: 6rem;
 }
 
