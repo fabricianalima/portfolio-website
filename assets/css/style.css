@@ -10,22 +10,23 @@
 
 :root {
     /* Paleta de Cores - Purple */
-    --purple-50: #f4eaff;
-    --purple-100: #e9dcfa;
-    --purple-200: #cdb3f0;
-    --purple-300: #b186e5;
-    --purple-400: #9460db;
-    --purple-500: #6b36c8;
-    --purple-600: #5b2ca0;
-    --purple-700: #4c2177;
-    --purple-800: #441f88;
-    --purple-900: #2a0e4d;
+     --purple-50:  #FEFAE0;  /* creme bem claro */
+    --purple-100: #F1FAEE;  /* fundo claro, tags */
+    --purple-200: #D8E8E4;  /* transição suave */
+    --purple-300: #A9CFC9;  /* verde suave */
+    --purple-400: #5FB6AA;  /* verde intermediário */
+    --purple-500: #2A9D8F;  /* cor principal */
+    --purple-600: #267E74;  /* hover de botões */
+    --purple-700: #264653;  /* títulos */
+    --purple-800: #264653;  /* textos fortes */
+    --purple-900: #1B313A;  /* tom mais escuro */
+
 
     /* Cores Neutras */
     --gray-200: #e8e8e8;
     --gray-400: #585861;
     --black: #171717;
-    --white: #FAF7FF;
+    --white: #FAFAFA;
 
     /* Cores de Estado */
     --error: #e63946;
@@ -149,7 +150,7 @@ header {
     width: 100%;
     height: 5rem;
     border-bottom: var(--spacing-xs) solid var(--gray-200);
-    background-color: var(--purple-800);
+    background: linear-gradient(to right, var(--purple-500), var(--purple-800));
     box-shadow: var(--shadow-sm);
 }
 
@@ -455,9 +456,11 @@ header a:hover {
     background-color: var(--purple-500);
 }
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    width: 100%;
 }
 
 .contact-info h2 {
@@ -465,13 +468,22 @@ header a:hover {
 }
 
 .contact-info p {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .social-container {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-xl);
+    gap: 3rem;
+
+    padding: 2rem;
+    margin-bottom: 2rem;
+
+    border: 0.15rem solid var(--gray-200);
+    border-radius: var(--radius-lg);
+
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
 }
 
 .social-icon {
@@ -489,21 +501,45 @@ header a:hover {
 }
 
 .social-icon:hover img {
-    filter: brightness(0)
+        filter: brightness(0)
         saturate(100%)
-        invert(42%)
-        sepia(93%)
-        saturate(1352%)
-        hue-rotate(243deg)
-        brightness(79%)
+        invert(18%)
+        sepia(16%)
+        saturate(1107%)
+        hue-rotate(156deg)
+        brightness(94%)
         contrast(91%);
 }
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    text-decoration: none;
+    color: var(--purple-700);
+
+    transition: transform 0.3s ease;
+}
+
+.social-link img {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+}
 /*Formulario*/
 form{
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 25px rgba(38, 70, 83, 0.08);
 }
 
 form label{
@@ -591,13 +627,13 @@ footer{
     width: 6rem;
     height: 6rem;
     filter: brightness(0)
-        saturate(100%)
-        invert(11%)
-        sepia(69%)
-        saturate(3759%)
-        hue-rotate(256deg)
-        brightness(101%)
-        contrast(96%);
+    saturate(100%)
+    invert(11%)
+    sepia(69%)
+    saturate(3759%)
+    hue-rotate(256deg)
+    brightness(101%)
+    contrast(96%);
 }
 @media screen and (max-width: 1024px) {
 
@@ -947,6 +983,8 @@ footer{
     /* Formulário */
     form {
         gap: var(--spacing-sm);
+         background-color: #FFFFFF;
+  
     }
 
     form label {
@@ -961,13 +999,15 @@ footer{
 
     form button {
         padding: 0.75rem var(--spacing-md);
-        font-size: var(--text-base);
-    }
+       font-size: var(--text-base);
+               }
 
+ 
     /* Footer */
     footer {
         padding: var(--spacing-md) var(--spacing-sm);
         font-size: var(--text-sm);
+
     }
     
     /* Success Page */
